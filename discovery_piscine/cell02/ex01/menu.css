@@ -1,0 +1,57 @@
+/* พื้นฐานของแถบเมนู */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* สไตล์ของปุ่มเมนูหลัก */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 20px;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+/* กล่องเก็บรายการเมนูย่อย (ซ่อนไว้ก่อน) */
+.dropdown-content {
+    display: none; /* ซ่อนเมนูไว้ */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* รายการในเมนูย่อย */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* เมื่อเอาเมาส์ไปชี้ที่เมนูย่อยให้เปลี่ยนสี */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* --- หัวใจสำคัญ: เมื่อเอาเมาส์ชี้ที่ปุ่มหลัก ให้แสดงเมนูย่อยออกมา --- */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* เปลี่ยนสีปุ่มหลักเมื่อชี้ */
+.dropdown:hover .dropbtn {
+    background-color: #4CAF50;
+}
