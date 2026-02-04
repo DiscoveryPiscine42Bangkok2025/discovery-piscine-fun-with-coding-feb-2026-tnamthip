@@ -2,10 +2,9 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    height: 100vh;
     margin: 0;
     padding: 20px;
-    transition: background-color 0.3s; /* เพิ่มความสมูทเวลาเปลี่ยนสี */
+    transition: background-color 0.3s;
 }
 
 button {

@@ -1,0 +1,89 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    width: 350px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ตารางไร้เส้นขอบ */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.info-table td {
+    padding: 25px;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 0;
+    color: #222;
+}
+
+.description {
+    color: #007bff; /* สีน้ำเงินแบบทีมชาติ USA */
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.location {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.social-networks a {
+    text-decoration: none;
+    color: #333;
+    font-size: 22px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-networks a:hover {
+    color: #007bff;
+}
+
+.contact-btn {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding: 18px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.contact-btn:hover {
+    background-color: #333;
+}
