@@ -37,19 +37,15 @@
 
     <script>
         $(document).ready(function() {
-            // 1. แจ้งเตือนทุก 30 วินาที
             setInterval(function() {
                 alert('Please, use me...');
             }, 30000);
 
-            // 2. ดักจับเหตุการณ์คลิกที่ปุ่ม submit
             $('#btn-submit').on('click', function() {
-                // ดึงค่าโดยใช้ .val() ของ jQuery
                 const leftStr = $('#left').val();
                 const rightStr = $('#right').val();
                 const op = $('#operator').val();
 
-                // ตรวจสอบว่าเป็นตัวเลขจำนวนเต็มบวก (ใช้ Regex เดิม)
                 if (!/^\d+$/.test(leftStr) || !/^\d+$/.test(rightStr)) {
                     alert('Error :(');
                     return;
@@ -59,7 +55,7 @@
                 const right = parseInt(rightStr);
                 let result;
 
-                // ตรวจสอบกรณีหาร/modulo ด้วย 0
+
                 if ((op === '/' || op === '%') && right === 0) {
                     const msg = "It’s over 9000!";
                     alert(msg);
@@ -67,7 +63,6 @@
                     return;
                 }
 
-                // คำนวณผลลัพธ์
                 switch (op) {
                     case '+': result = left + right; break;
                     case '-': result = left - right; break;
@@ -76,7 +71,6 @@
                     case '%': result = left % right; break;
                 }
 
-                // แสดงผลลัพธ์
                 alert(result);
                 console.log(result);
             });
