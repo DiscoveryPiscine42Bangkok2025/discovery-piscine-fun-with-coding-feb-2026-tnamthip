@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It's over 9000!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .calc-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <input type="text" id="left" placeholder="Left member">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right" placeholder="Right member">
+        <input type="submit" value="Try me!" id="btn-submit">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // 1. แจ้งเตือนทุก 30 วินาที
+            setInterval(function() {
+                alert('Please, use me...');
+            }, 30000);
+
+            // 2. ดักจับเหตุการณ์คลิกที่ปุ่ม submit
+            $('#btn-submit').on('click', function() {
+                // ดึงค่าโดยใช้ .val() ของ jQuery
+                const leftStr = $('#left').val();
+                const rightStr = $('#right').val();
+                const op = $('#operator').val();
+
+                // ตรวจสอบว่าเป็นตัวเลขจำนวนเต็มบวก (ใช้ Regex เดิม)
+                if (!/^\d+$/.test(leftStr) || !/^\d+$/.test(rightStr)) {
+                    alert('Error :(');
+                    return;
+                }
+
+                const left = parseInt(leftStr);
+                const right = parseInt(rightStr);
+                let result;
+
+                // ตรวจสอบกรณีหาร/modulo ด้วย 0
+                if ((op === '/' || op === '%') && right === 0) {
+                    const msg = "It’s over 9000!";
+                    alert(msg);
+                    console.log(msg);
+                    return;
+                }
+
+                // คำนวณผลลัพธ์
+                switch (op) {
+                    case '+': result = left + right; break;
+                    case '-': result = left - right; break;
+                    case '*': result = left * right; break;
+                    case '/': result = left / right; break;
+                    case '%': result = left % right; break;
+                }
+
+                // แสดงผลลัพธ์
+                alert(result);
+                console.log(result);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -7,7 +7,6 @@ window.onload = function() {
     if (todoCookie) {
         const json = todoCookie.split('=')[1];
         const todos = JSON.parse(decodeURIComponent(json));
-        // วนลูปจากหลังมาหน้าเพื่อให้ลำดับการแสดงผลถูกต้องตามที่บันทึกไว้
         todos.reverse().forEach(text => addTodo(text, false));
     }
 };
